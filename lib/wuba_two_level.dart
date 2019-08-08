@@ -1,48 +1,29 @@
-/*
- * Author: Jpeng
- * Email: peng8350@gmail.com
- * Time:  2019-06-26 16:28
- */
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart'
     hide RefreshIndicator, RefreshIndicatorState;
 import 'package:flutter/widgets.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
-/*
-   there two example implements two level,
-   the first is common,when twoRefreshing,header will follow the list to scrollDown,when closing,still follow
-   list move up,
-   the second example use Navigator and keep offset when twoLevel trigger,
-   header can use ClassicalHeader to implments twoLevel,it provide outerBuilder(1.4.7)
-   important point:
-   1. open enableTwiceRefresh bool ,default is false
-   2. _refreshController.twiceRefreshComplete() can closing the two level
-*/
-class TwoLevelExample extends StatefulWidget {
+class WubaTwoLevel extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    // TODO: implement createState
-    return _TwoLevelExampleState();
+    return _WubaTwoLevelState();
   }
 }
 
-class _TwoLevelExampleState extends State<TwoLevelExample> {
+class _WubaTwoLevelState extends State<WubaTwoLevel> {
   RefreshController _refreshController1 =
-      RefreshController(initialRefreshStatus: RefreshStatus.twoLeveling);
+  RefreshController(initialRefreshStatus: RefreshStatus.twoLeveling);
   RefreshController _refreshController2 = RefreshController();
   int _tabIndex = 0;
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return RefreshConfiguration(
       enableScrollWhenTwoLevel: true,
       maxOverScrollExtent: 120,
@@ -76,16 +57,16 @@ class _TwoLevelExampleState extends State<TwoLevelExample> {
                             return Container(
                               height: c.biggest.height,
                               child: _refreshController1.headerStatus !=
-                                          RefreshStatus.twoLeveling &&
-                                      _refreshController1.headerStatus !=
-                                          RefreshStatus.twoLevelOpening &&
-                                      _refreshController1.headerStatus !=
-                                          RefreshStatus.twoLevelClosing
+                                  RefreshStatus.twoLeveling &&
+                                  _refreshController1.headerStatus !=
+                                      RefreshStatus.twoLevelOpening &&
+                                  _refreshController1.headerStatus !=
+                                      RefreshStatus.twoLevelClosing
                                   ? Container(
-                                      height: 60.0,
-                                      alignment: Alignment.center,
-                                      child: child,
-                                    )
+                                height: 60.0,
+                                alignment: Alignment.center,
+                                child: child,
+                              )
                                   : child,
                               decoration: BoxDecoration(
                                   image: DecorationImage(
@@ -128,29 +109,6 @@ class _TwoLevelExampleState extends State<TwoLevelExample> {
                             ),
                           ),
                         ),
-                        child: CustomScrollView(
-                          physics: ClampingScrollPhysics(),
-                          slivers: <Widget>[
-                            SliverToBoxAdapter(
-                              child: Container(
-                                child: Scaffold(
-                                  appBar: AppBar(),
-                                  body: Column(
-                                    children: <Widget>[
-                                      RaisedButton(
-                                        onPressed: () {
-                                          Navigator.of(context).pop();
-                                        },
-                                        child: Text("点击这里返回上一页!"),
-                                      )
-                                    ],
-                                  ),
-                                ),
-                                height: 500.0,
-                              ),
-                            )
-                          ],
-                        ),
                         controller: _refreshController1,
                         enableTwoLevel: true,
                         enablePullDown: true,
@@ -167,23 +125,6 @@ class _TwoLevelExampleState extends State<TwoLevelExample> {
                   offstage: _tabIndex != 1,
                   child: SmartRefresher(
                     header: ClassicHeader(),
-                    child: CustomScrollView(
-                      physics: ClampingScrollPhysics(),
-                      slivers: <Widget>[
-                        SliverToBoxAdapter(
-                          child: Container(
-                            child: RaisedButton(
-                              onPressed: () {
-                                Navigator.of(context).pop();
-                              },
-                              child: Text("点击这里返回上一页!"),
-                            ),
-                            color: Colors.red,
-                            height: 680.0,
-                          ),
-                        )
-                      ],
-                    ),
                     controller: _refreshController2,
                     enableTwoLevel: true,
                     onRefresh: () async {
@@ -195,10 +136,10 @@ class _TwoLevelExampleState extends State<TwoLevelExample> {
                       _refreshController2.position.hold(() {});
                       Navigator.of(context)
                           .push(MaterialPageRoute(
-                              builder: (c) => Scaffold(
-                                    appBar: AppBar(),
-                                    body: Text("二楼刷新"),
-                                  )))
+                          builder: (c) => Scaffold(
+                            appBar: AppBar(),
+                            body: Text("二楼刷新"),
+                          )))
                           .whenComplete(() {
                         _refreshController2.twoLevelComplete(
                             duration: Duration(microseconds: 1));

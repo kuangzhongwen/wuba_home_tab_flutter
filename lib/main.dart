@@ -1,8 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'ui/indicator/base/IndicatorActivity.dart';
-import 'ui/MainActivity.dart';
-import 'ui/SecondActivity.dart';
+import 'wuba_two_level.dart';
 
 void main() => runApp(MyApp());
 
@@ -27,17 +25,7 @@ class MyApp extends StatelessWidget {
         // counter didn't reset back to zero; the application is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MainActivity(title: title),
-      routes: {
-        "sec": (BuildContext context) {
-          return SecondActivity(
-            title: "SecondActivity",
-          );
-        },
-        "indicator": (BuildContext context) {
-          return IndicatorActivity();
-        }
-      },
+      home: WubaTwoLevel()
     );
   }
 }
