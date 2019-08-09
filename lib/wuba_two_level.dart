@@ -22,6 +22,14 @@ class _WubaTwoLevelState extends State<WubaTwoLevel> {
     super.initState();
   }
 
+  Widget _image(String iconName) {
+    return Image.asset(
+      'images/${iconName}.png',
+      width: 24,
+      height: 24,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return RefreshConfiguration(
@@ -38,9 +46,9 @@ class _WubaTwoLevelState extends State<WubaTwoLevel> {
               },
               items: [
                 BottomNavigationBarItem(
-                    icon: Icon(Icons.add), title: Text("二级刷新例子1")),
+                    icon: _image("wb_home_tap_index"), title: Text("首页")),
                 BottomNavigationBarItem(
-                    icon: Icon(Icons.border_clear), title: Text("二级刷新例子2"))
+                    icon: _image("wb_home_tap_history"), title: Text("发现"))
               ],
             ),
             body: Stack(
@@ -81,17 +89,6 @@ class _WubaTwoLevelState extends State<WubaTwoLevel> {
                             height: c.biggest.height,
                             child: Stack(
                               children: <Widget>[
-                                Center(
-                                  child: Wrap(
-                                    children: <Widget>[
-                                      RaisedButton(
-                                        color: Colors.greenAccent,
-                                        onPressed: () {},
-                                        child: Text("登陆"),
-                                      ),
-                                    ],
-                                  ),
-                                ),
                                 Container(
                                   height: 60.0,
                                   child: GestureDetector(
