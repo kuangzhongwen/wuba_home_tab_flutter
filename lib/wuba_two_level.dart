@@ -5,6 +5,7 @@ import 'package:flutter/widgets.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 class WubaTwoLevel extends StatefulWidget {
+
   @override
   State<StatefulWidget> createState() {
     return _WubaTwoLevelState();
@@ -12,8 +13,8 @@ class WubaTwoLevel extends StatefulWidget {
 }
 
 class _WubaTwoLevelState extends State<WubaTwoLevel> {
-  RefreshController _refreshController1 =
-  RefreshController(initialRefreshStatus: RefreshStatus.twoLeveling);
+  // 初始化在 2 楼
+  RefreshController _refreshController1 = RefreshController(initialRefreshStatus: RefreshStatus.twoLeveling);
   RefreshController _refreshController2 = RefreshController();
   int _tabIndex = 0;
 
@@ -22,6 +23,7 @@ class _WubaTwoLevelState extends State<WubaTwoLevel> {
     super.initState();
   }
 
+  /// 根据名称加载图片
   Widget _image(String iconName) {
     return Image.asset(
       'images/${iconName}.png',
