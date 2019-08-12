@@ -48,9 +48,9 @@ class _WubaTwoLevelState extends State<WubaTwoLevel> {
               },
               items: [
                 BottomNavigationBarItem(
-                    icon: _image("wb_home_tap_index"), title: Text("首页")),
+                    icon: _image("wb_home_tap_index_normal"), title: Text("首页"), activeIcon: _image("wb_home_tap_index_pressed")),
                 BottomNavigationBarItem(
-                    icon: _image("wb_home_tap_history"), title: Text("发现"))
+                    icon: _image("wb_home_tap_history_normal"), title: Text("发现"), activeIcon: _image("wb_home_tap_history_pressed"))
               ],
             ),
             body: Stack(

@@ -38,8 +38,10 @@ flutter:
 
   assets:
     - images/secondfloor.jpg
-    - wb_home_tap_index.png
-    - wb_home_tap_history.png
+    - wb_home_tap_history_normal.png
+    - wb_home_tap_history_pressed.png
+    - wb_home_tap_index_normal.png
+    - wb_home_tap_index_pressed.png
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
