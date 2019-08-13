@@ -24,7 +24,7 @@ class _WubaTwoLevelState extends State<WubaTwoLevel> {
   }
 
   /// 根据名称加载图片
-  Widget _image(String iconName) {
+  static Widget _image(String iconName) {
     return Image.asset(
       'images/${iconName}.png',
       width: 24,
@@ -62,7 +62,7 @@ class _WubaTwoLevelState extends State<WubaTwoLevel> {
                       return SmartRefresher(
                         header: ClassicHeader(
                           textStyle: TextStyle(color: Colors.white),
-                          height: 80.0,
+                          height: 120.0,
                           outerBuilder: (child) {
                             return Container(
                               height: c.biggest.height,
