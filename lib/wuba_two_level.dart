@@ -3,6 +3,7 @@ import 'package:flutter/material.dart'
     hide RefreshIndicator, RefreshIndicatorState;
 import 'package:flutter/widgets.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
+import 'Home.dart';
 
 class WubaTwoLevel extends StatefulWidget {
 
@@ -116,6 +117,7 @@ class _WubaTwoLevelState extends State<WubaTwoLevel> {
                           _refreshController1.refreshCompleted();
                         },
                         onTwoLevel: () {},
+                        child: Home()
                       );
                     },
                   ),
@@ -131,7 +133,6 @@ class _WubaTwoLevelState extends State<WubaTwoLevel> {
                       _refreshController2.refreshCompleted();
                     },
                     onTwoLevel: () {
-                      print("Asd");
                       _refreshController2.position.hold(() {});
                       Navigator.of(context)
                           .push(MaterialPageRoute(
