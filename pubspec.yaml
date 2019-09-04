@@ -37,17 +37,7 @@ dev_dependencies:
 flutter:
 
   assets:
-    - images/secondfloor.jpg
-    - wb_home_tap_history_normal.png
-    - wb_home_tap_history_pressed.png
-    - wb_home_tap_index_normal.png
-    - wb_home_tap_index_pressed.png
-    - ic_home_banner.png
-    - publish_icon_house.png
-    - publish_icon_house_zufang.png
-    - publish_icon_qiuzuqiugouqiufuwu.png
-    - publish_icon_sale.png
-    - publish_icon_zhaopin.png
+    - images/
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
