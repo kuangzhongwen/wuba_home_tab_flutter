@@ -87,7 +87,7 @@ class _HomeTabPageState extends State<HomeTabPage> {
               child: AppBar(
                 backgroundColor: Colors.transparent,
                 elevation: dismissAppbar ? 1.0 : 0.0,
-                title: SimpleLinkBar(
+                title: LinkBar(
                   key: linkKey,
                 ),
               ),
@@ -100,16 +100,16 @@ class _HomeTabPageState extends State<HomeTabPage> {
   }
 }
 
-class SimpleLinkBar extends StatefulWidget {
-  SimpleLinkBar({Key key}) : super(key: key);
+class LinkBar extends StatefulWidget {
+  LinkBar({Key key}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() {
-    return _SimpleLinkBarState();
+    return _LinkBarState();
   }
 }
 
-class _SimpleLinkBarState extends State<SimpleLinkBar>
+class _LinkBarState extends State<LinkBar>
     with RefreshProcessor, SingleTickerProviderStateMixin {
   RefreshStatus _status = RefreshStatus.idle;
   AnimationController _animationController;
