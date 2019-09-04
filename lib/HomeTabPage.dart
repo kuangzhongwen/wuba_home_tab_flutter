@@ -64,7 +64,8 @@ class _HomeTabPageState extends State<HomeTabPage> {
                         SliverToBoxAdapter(
                           child: Image.asset(
                             "images/home_page_bg.png",
-                            fit: BoxFit.cover
+                            fit: BoxFit.fill,
+                            height: 500,
                           ),
                         ),
                         SliverFixedExtentList(
@@ -80,11 +81,75 @@ class _HomeTabPageState extends State<HomeTabPage> {
                   ),
                 )
               ],
+            ),
+            Container(
+              height: 64.0,
+              child: AppBar(
+                backgroundColor: Colors.transparent,
+                elevation: dismissAppbar ? 1.0 : 0.0,
+                title: SimpleLinkBar(
+                  key: linkKey,
+                ),
+              ),
             )
           ],
         ),
       ),
       maxOverScrollExtent: 100,
     );
+  }
+}
+
+class SimpleLinkBar extends StatefulWidget {
+  SimpleLinkBar({Key key}) : super(key: key);
+
+  @override
+  State<StatefulWidget> createState() {
+    return _SimpleLinkBarState();
+  }
+}
+
+class _SimpleLinkBarState extends State<SimpleLinkBar>
+    with RefreshProcessor, SingleTickerProviderStateMixin {
+  RefreshStatus _status = RefreshStatus.idle;
+  AnimationController _animationController;
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
+  @override
+  void initState() {
+    _animationController = AnimationController(vsync: this);
+    super.initState();
+  }
+
+  @override
+  Future endRefresh() {
+    _animationController.animateTo(0.0, duration: Duration(milliseconds: 300));
+    return Future.value();
+  }
+
+  @override
+  void onOffsetChange(double offset) {
+    if (_status != RefreshStatus.refreshing)
+      _animationController.value = offset / 80.0;
+    super.onOffsetChange(offset);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return ScaleTransition(
+      child: CupertinoActivityIndicator(),
+      scale: _animationController,
+    );
+  }
+
+  @override
+  void onModeChange(RefreshStatus mode) {
+    super.onModeChange(mode);
+    _status = mode;
+    setState(() {});
   }
 }
