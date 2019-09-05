@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
+import 'package:wuba_pull_refresh_anim/SelectCityText.dart';
 
 import 'Item.dart';
 
@@ -66,14 +67,22 @@ class _HomeTabPageState extends State<HomeTabPage> {
                                 "images/home_page_bg.png",
                                 fit: BoxFit.fitWidth
                               ),
-                              Container(
-                                  margin: EdgeInsets.fromLTRB(15, 250, 15, 0),
-                                  child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(6),
-                                      child: Container(width: MediaQuery.of(context).size.width, height: 200
-                                          ,color: Colors.white)
+                              Row(
+                                children: <Widget>[
+                                  SelectCityText(),
+                                  Container(
+                                      margin: EdgeInsets.fromLTRB(15, 250, 15, 0),
+                                      child: ClipRRect(
+                                          borderRadius: BorderRadius.circular(6),
+                                          child: Container(width: MediaQuery
+                                              .of(context)
+                                              .size
+                                              .width, height: 200
+                                              , color: Colors.white)
+                                      )
                                   )
-                              )
+                                ],
+                              ),
                         ])),
                         SliverFixedExtentList(
                           delegate: SliverChildBuilderDelegate(
