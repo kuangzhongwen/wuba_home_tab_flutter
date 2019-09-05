@@ -23,8 +23,7 @@ class _HomeTabPageState extends State<HomeTabPage> {
     _scrollController.addListener(() {
       final bool ifdismissAppbar = _scrollController.offset >= 136.0;
       if (dismissAppbar != ifdismissAppbar) {
-        if (mounted)
-          setState(() {});
+        if (mounted) setState(() {});
       }
       dismissAppbar = ifdismissAppbar;
     });
@@ -47,7 +46,7 @@ class _HomeTabPageState extends State<HomeTabPage> {
             Stack(
               children: <Widget>[
                 Positioned(
-                  top: -150.0,
+                  top: -100.0,
                   bottom: 0.0,
                   left: 0.0,
                   right: 0.0,
@@ -62,12 +61,20 @@ class _HomeTabPageState extends State<HomeTabPage> {
                       controller: _scrollController,
                       slivers: <Widget>[
                         SliverToBoxAdapter(
-                          child: Image.asset(
-                            "images/home_page_bg.png",
-                            fit: BoxFit.fill,
-                            height: 500,
-                          ),
-                        ),
+                            child: Stack(children: <Widget>[
+                              Image.asset(
+                                "images/home_page_bg.png",
+                                fit: BoxFit.fitWidth
+                              ),
+                              Container(
+                                  margin: EdgeInsets.fromLTRB(15, 250, 15, 0),
+                                  child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(6),
+                                      child: Container(width: MediaQuery.of(context).size.width, height: 200
+                                          ,color: Colors.white)
+                                  )
+                              )
+                        ])),
                         SliverFixedExtentList(
                           delegate: SliverChildBuilderDelegate(
                               (c, i) => Item(
