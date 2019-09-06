@@ -19,16 +19,8 @@ class _HomeTabState extends State<HomeTab> {
   final Key linkKey = GlobalKey();
 
   bool dismissAppbar = false;
-  double screenW;
 
   List<String> data = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
-
-  _HomeTabState() {
-    this.screenW = MediaQuery
-        .of(context)
-        .size
-        .width;
-  }
 
   @override
   void initState() {
@@ -80,14 +72,14 @@ class _HomeTabState extends State<HomeTab> {
                               ),
                               Container(
                                   margin: EdgeInsets.fromLTRB(15, 220, 15, 0),
-                                  width: screenW,
+                                  width: MediaQuery.of(context).size.width,
                                   child: Column(
                                     children: <Widget>[
                                     SelectCityText(),
                                     ClipRRect(
                                         borderRadius: BorderRadius.circular(6),
                                         child: Container(
-                                            width: screenW,
+                                            width: MediaQuery.of(context).size.width,
                                             height: 250,
                                             color: Colors.white)
                                     )
