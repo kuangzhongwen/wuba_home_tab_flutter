@@ -21,9 +21,8 @@ class _SelectCityState extends State<SelectCityText> {
       child: Text(
           selectCity,
           textAlign: TextAlign.left,
-          softWrap: false,
           style: TextStyle(
-              fontSize: 20.0,
+              fontSize: 18.0,
               color: Colors.white
           )
       )
