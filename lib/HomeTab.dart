@@ -5,19 +5,30 @@ import 'package:wuba_pull_refresh_anim/SelectCityText.dart';
 
 import 'Item.dart';
 
-class HomeTabPage extends StatefulWidget {
+class HomeTab extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return _HomeTabPageState();
+    return _HomeTabState();
   }
 }
 
-class _HomeTabPageState extends State<HomeTabPage> {
-  RefreshController _refreshController = RefreshController();
-  final Key linkKey = GlobalKey();
-  List<String> data = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
+class _HomeTabState extends State<HomeTab> {
+  final RefreshController _refreshController = RefreshController();
   final ScrollController _scrollController = ScrollController();
+
+  final Key linkKey = GlobalKey();
+
   bool dismissAppbar = false;
+  double screenW;
+
+  List<String> data = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
+
+  _HomeTabState() {
+    this.screenW = MediaQuery
+        .of(context)
+        .size
+        .width;
+  }
 
   @override
   void initState() {
@@ -67,22 +78,22 @@ class _HomeTabPageState extends State<HomeTabPage> {
                                 "images/home_page_bg.png",
                                 fit: BoxFit.fitWidth
                               ),
-                              Row(
-                                children: <Widget>[
-                                  SelectCityText(),
-                                  Container(
-                                      margin: EdgeInsets.fromLTRB(15, 250, 15, 0),
-                                      child: ClipRRect(
-                                          borderRadius: BorderRadius.circular(6),
-                                          child: Container(width: MediaQuery
-                                              .of(context)
-                                              .size
-                                              .width, height: 200
-                                              , color: Colors.white)
-                                      )
-                                  )
-                                ],
-                              ),
+                              Container(
+                                  margin: EdgeInsets.fromLTRB(15, 220, 15, 0),
+                                  width: screenW,
+                                  child: Column(
+                                    children: <Widget>[
+                                    SelectCityText(),
+                                    ClipRRect(
+                                        borderRadius: BorderRadius.circular(6),
+                                        child: Container(
+                                            width: screenW,
+                                            height: 250,
+                                            color: Colors.white)
+                                    )
+                                  ]
+                                )
+                              )
                         ])),
                         SliverFixedExtentList(
                           delegate: SliverChildBuilderDelegate(

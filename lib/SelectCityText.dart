@@ -1,5 +1,6 @@
 
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class SelectCityText extends StatefulWidget {
 
@@ -15,11 +16,17 @@ class _SelectCityState extends State<SelectCityText> {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      selectCity,
-      textAlign: TextAlign.start,
-      textDirection: TextDirection.ltr,
-      softWrap: false
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
+      child: Text(
+          selectCity,
+          textAlign: TextAlign.left,
+          softWrap: false,
+          style: TextStyle(
+              fontSize: 20.0,
+              color: Colors.white
+          )
+      )
     );
   }
 }
