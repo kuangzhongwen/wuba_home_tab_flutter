@@ -83,7 +83,7 @@ class _HotDiscussGridViewState extends State<_HotDiscussGridView> {
   Widget build(BuildContext context) {
     return GridView.builder(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 3, crossAxisSpacing: 1, childAspectRatio:0.5),
+            crossAxisCount: 3, crossAxisSpacing: 1),
         physics: NeverScrollableScrollPhysics(),
         itemCount: _data != null && _data.hots != null ? _data.hots.length : 0,
         itemBuilder: (context, index) {
@@ -98,10 +98,10 @@ class _HotDiscussItemView extends StatefulWidget {
   _HotDiscussItemView({this.hot});
 
   @override
-  _HotDiscussState createState() => _HotDiscussState();
+  _HotDiscussItemState createState() => _HotDiscussItemState();
 }
 
-class _HotDiscussState extends State<_HotDiscussItemView> {
+class _HotDiscussItemState extends State<_HotDiscussItemView> {
   @override
   Widget build(BuildContext context) {
     return Column(
