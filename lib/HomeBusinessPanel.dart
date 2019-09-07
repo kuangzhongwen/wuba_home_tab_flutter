@@ -97,7 +97,7 @@ class _ItemState extends State<_BussinessItemView> {
         Center(
           child: Text(widget.bussiness.text,
               style: new TextStyle(
-                  fontSize: 12.0, height: 2.0, color: Color(0xff1a1a1a))),
+                  fontSize: 12.0, height: 2.0, color: Color(UIConstants.PRIMARY_TEXT_DARK_COLOR)))
         )
       ],
     );
