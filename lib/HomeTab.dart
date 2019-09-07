@@ -66,38 +66,32 @@ class _HomeTabState extends State<HomeTab> {
                       slivers: <Widget>[
                         SliverToBoxAdapter(
                             child: Stack(children: <Widget>[
-                              Image.asset(
-                                "images/home_page_bg.png",
-                                fit: BoxFit.fitWidth
-                              ),
-                              Container(
-                                  margin: EdgeInsets.fromLTRB(10, 180, 10, 0),
-                                  width: MediaQuery.of(context).size.width,
-                                  child: Column(
-                                    children: <Widget>[
-                                    SelectCityText(),
-                                    ClipRRect(
+                          Image.asset("images/home_page_bg.png",
+                              fit: BoxFit.fitWidth),
+                          Container(
+                              margin: EdgeInsets.fromLTRB(10, 180, 10, 0),
+                              width: MediaQuery.of(context).size.width,
+                              child: Column(children: <Widget>[
+                                SelectCityText(),
+                                ClipRRect(
+                                    borderRadius: BorderRadius.circular(6),
+                                    child: Container(
+                                        width:
+                                            MediaQuery.of(context).size.width,
+                                        color: Colors.white,
+                                        child: HomeBussinessPanel())),
+                                Padding(
+                                    padding: const EdgeInsets.fromLTRB(
+                                        0, 10.0, 0.0, 0.0),
+                                    child: ClipRRect(
                                         borderRadius: BorderRadius.circular(6),
                                         child: Container(
-                                            width: MediaQuery.of(context).size.width,
+                                            width: MediaQuery.of(context)
+                                                .size
+                                                .width,
                                             color: Colors.white,
-                                            child: HomeBussinessPanel()
-                                        )
-                                    ),
-                                      Padding(
-                                          padding: const EdgeInsets.fromLTRB(0, 10.0, 0.0, 0.0),
-                                          child: ClipRRect(
-                                              borderRadius: BorderRadius.circular(6),
-                                              child: Container(
-                                                  width: MediaQuery.of(context).size.width,
-                                                  color: Colors.white,
-                                                  child: HotDiscussPanel()
-                                              )
-                                          )
-                                      )
-                                  ]
-                                )
-                              )
+                                            child: HotDiscussPanel())))
+                              ]))
                         ]))
                       ],
                     ),
@@ -110,9 +104,7 @@ class _HomeTabState extends State<HomeTab> {
               child: AppBar(
                 backgroundColor: Colors.transparent,
                 elevation: dismissAppbar ? 1.0 : 0.0,
-                title: LinkBar(
-                  key: linkKey
-                ),
+                title: LinkBar(key: linkKey),
               ),
             )
           ],

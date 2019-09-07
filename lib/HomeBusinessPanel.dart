@@ -19,19 +19,21 @@ class _HomeBussinessState extends State<HomeBussinessPanel> {
       padding: const EdgeInsets.all(8.0),
       child: Column(
         children: <Widget>[
-          SizedBox(height: 40, child: TextField(
-              decoration: new InputDecoration(
-                  hintText: '房产',
-                  prefixIcon: Icon(Icons.search, color: Colors.deepOrange),
-                  contentPadding: const EdgeInsets.symmetric(vertical: 1.0),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(6),
-                    borderSide: BorderSide(color: Color(0xffc7c7cc), width: 1.0),
-                    gapPadding: 0.2,
-                  )
-              ),
-              style: new TextStyle(
-                  fontSize: 16.0, height: 1.0, color: Color(0xff666666)))),
+          SizedBox(
+              height: 40,
+              child: TextField(
+                  decoration: new InputDecoration(
+                      hintText: '房产',
+                      prefixIcon: Icon(Icons.search, color: Colors.deepOrange),
+                      contentPadding: const EdgeInsets.symmetric(vertical: 1.0),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(6),
+                        borderSide:
+                            BorderSide(color: Color(0xffc7c7cc), width: 1.0),
+                        gapPadding: 0.2,
+                      )),
+                  style: new TextStyle(
+                      fontSize: 16.0, height: 1.0, color: Color(0xff666666)))),
           SizedBox(height: 216.0, child: _BussinessGridView())
         ],
       ),
@@ -57,8 +59,7 @@ class _BussinessGridViewState extends State<_BussinessGridView> {
     return GridView.builder(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 5, // 每行 5 列
-            crossAxisSpacing: 10.0
-            ),
+            crossAxisSpacing: 10.0),
         physics: NeverScrollableScrollPhysics(), // 禁用滚动事件
         itemCount: _data.length,
         itemBuilder: (context, index) {
@@ -69,7 +70,7 @@ class _BussinessGridViewState extends State<_BussinessGridView> {
   void _ReceiveData() {
     Future.delayed(Duration(milliseconds: 200)).then((e) {
       setState(() {
-          _data = HomeMock.loadHomeBussiness();
+        _data = HomeMock.loadHomeBussiness();
       });
     });
   }
