@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
+import 'package:wuba_home_tab_flutter/HotDiscussPanel.dart';
 import 'package:wuba_home_tab_flutter/SelectCityText.dart';
 import 'package:wuba_home_tab_flutter/HomeBusinessPanel.dart';
 
@@ -80,8 +81,20 @@ class _HomeTabState extends State<HomeTab> {
                                         child: Container(
                                             width: MediaQuery.of(context).size.width,
                                             color: Colors.white,
-                                            child: HomeBussinessPanel())
-                                    )
+                                            child: HomeBussinessPanel()
+                                        )
+                                    ),
+                                      Padding(
+                                          padding: const EdgeInsets.fromLTRB(0, 10.0, 0.0, 0.0),
+                                          child: ClipRRect(
+                                              borderRadius: BorderRadius.circular(6),
+                                              child: Container(
+                                                  width: MediaQuery.of(context).size.width,
+                                                  color: Colors.white,
+                                                  child: HotDiscussPanel()
+                                              )
+                                          )
+                                      )
                                   ]
                                 )
                               )
