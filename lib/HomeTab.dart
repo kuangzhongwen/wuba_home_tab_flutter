@@ -70,7 +70,7 @@ class _HomeTabState extends State<HomeTab> {
                                 fit: BoxFit.fitWidth
                               ),
                               Container(
-                                  margin: EdgeInsets.fromLTRB(15, 180, 15, 0),
+                                  margin: EdgeInsets.fromLTRB(10, 180, 10, 0),
                                   width: MediaQuery.of(context).size.width,
                                   child: Column(
                                     children: <Widget>[
@@ -79,7 +79,6 @@ class _HomeTabState extends State<HomeTab> {
                                         borderRadius: BorderRadius.circular(6),
                                         child: Container(
                                             width: MediaQuery.of(context).size.width,
-                                            height: 300,
                                             color: Colors.white,
                                             child: HomeBussinessPanel())
                                     )
