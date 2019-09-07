@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
-import 'package:wuba_pull_refresh_anim/SelectCityText.dart';
+import 'package:wuba_home_tab_flutter/SelectCityText.dart';
+import 'package:wuba_home_tab_flutter/HomeBusinessPanel.dart';
 
 import 'Item.dart';
 
@@ -81,7 +82,8 @@ class _HomeTabState extends State<HomeTab> {
                                         child: Container(
                                             width: MediaQuery.of(context).size.width,
                                             height: 250,
-                                            color: Colors.white)
+                                            color: Colors.white,
+                                            child: HomeBussinessPanel())
                                     )
                                   ]
                                 )
@@ -107,7 +109,7 @@ class _HomeTabState extends State<HomeTab> {
                 backgroundColor: Colors.transparent,
                 elevation: dismissAppbar ? 1.0 : 0.0,
                 title: LinkBar(
-                  key: linkKey,
+                  key: linkKey
                 ),
               ),
             )
