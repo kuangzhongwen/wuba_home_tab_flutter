@@ -81,7 +81,7 @@ class _HomeTabState extends State<HomeTab> {
                                         borderRadius: BorderRadius.circular(6),
                                         child: Container(
                                             width: MediaQuery.of(context).size.width,
-                                            height: 250,
+                                            height: 300,
                                             color: Colors.white,
                                             child: HomeBussinessPanel())
                                     )
@@ -92,7 +92,7 @@ class _HomeTabState extends State<HomeTab> {
                         SliverFixedExtentList(
                           delegate: SliverChildBuilderDelegate(
                               (c, i) => Item(
-                                    title: data[i],
+                                    title: data[i]
                                   ),
                               childCount: data.length),
                           itemExtent: 100.0,
