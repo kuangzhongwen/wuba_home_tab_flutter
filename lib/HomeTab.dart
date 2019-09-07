@@ -4,8 +4,6 @@ import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:wuba_home_tab_flutter/SelectCityText.dart';
 import 'package:wuba_home_tab_flutter/HomeBusinessPanel.dart';
 
-import 'Item.dart';
-
 class HomeTab extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -51,7 +49,7 @@ class _HomeTabState extends State<HomeTab> {
             Stack(
               children: <Widget>[
                 Positioned(
-                  top: -100.0,
+                  top: -80.0,
                   bottom: 0.0,
                   left: 0.0,
                   right: 0.0,
@@ -72,7 +70,7 @@ class _HomeTabState extends State<HomeTab> {
                                 fit: BoxFit.fitWidth
                               ),
                               Container(
-                                  margin: EdgeInsets.fromLTRB(15, 220, 15, 0),
+                                  margin: EdgeInsets.fromLTRB(15, 180, 15, 0),
                                   width: MediaQuery.of(context).size.width,
                                   child: Column(
                                     children: <Widget>[
@@ -88,15 +86,7 @@ class _HomeTabState extends State<HomeTab> {
                                   ]
                                 )
                               )
-                        ])),
-                        SliverFixedExtentList(
-                          delegate: SliverChildBuilderDelegate(
-                              (c, i) => Item(
-                                    title: data[i]
-                                  ),
-                              childCount: data.length),
-                          itemExtent: 100.0,
-                        )
+                        ]))
                       ],
                     ),
                   ),
