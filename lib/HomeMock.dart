@@ -25,19 +25,21 @@ class HomeMock {
   }
 
   static loadHotDiscuss() {
-    List<HotDiscussItemBean> hots = List<HotDiscussItemBean>();
-    hots.add(HotDiscussItemBean(
-        'images/home_hot_discuss_icon0.png', '急招职位', '快速入职', 'https://58.com'));
-    hots.add(HotDiscussItemBean('images/home_hot_discuss_icon1.png', '房东直租',
-        '免收中介费', 'https://58.com'));
-    hots.add(HotDiscussItemBean('images/home_hot_discuss_icon2.png', '求职那些事',
-        '找工作的门道', 'https://58.com'));
-    hots.add(HotDiscussItemBean('images/home_hot_discuss_icon3.png', '普工大家庭',
-        '你是哪个厂的', 'https://58.com'));
-    hots.add(HotDiscussItemBean('images/home_hot_discuss_icon4.png', '万能求助圈',
-        '寻人寻物求助', 'https://58.com'));
-    hots.add(HotDiscussItemBean('images/home_hot_discuss_icon5.png', '美容美发圈',
-        '烫染洗剪吹喽', 'https://58.com'));
+    List<HotDiscussItemBean> hots = [];
+    hots.addAll([
+      HotDiscussItemBean(
+          'images/home_hot_discuss_icon0.png', '急招职位', '快速入职', 'https://58.com'),
+      HotDiscussItemBean('images/home_hot_discuss_icon1.png', '房东直租',
+          '免收中介费', 'https://58.com'),
+      HotDiscussItemBean('images/home_hot_discuss_icon2.png', '求职那些事',
+          '找工作的门道', 'https://58.com'),
+      HotDiscussItemBean('images/home_hot_discuss_icon3.png', '普工大家庭',
+          '你是哪个厂的', 'https://58.com'),
+      HotDiscussItemBean('images/home_hot_discuss_icon4.png', '万能求助圈',
+          '寻人寻物求助', 'https://58.com'),
+      HotDiscussItemBean('images/home_hot_discuss_icon5.png', '美容美发圈',
+          '烫染洗剪吹喽', 'https://58.com')
+    ]);
     return HotDiscussBean('楼市正式进入冰冻期，炒房者40套房子全部砸手上', 'https://58.com', hots);
   }
 }

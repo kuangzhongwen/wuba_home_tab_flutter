@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:wuba_home_tab_flutter/BussinessBean.dart';
 import 'package:wuba_home_tab_flutter/HomeMock.dart';
+import 'package:wuba_home_tab_flutter/UIConstants.dart';
 
 class HomeBussinessPanel extends StatefulWidget {
   @override
@@ -33,7 +34,7 @@ class _HomeBussinessState extends State<HomeBussinessPanel> {
                         gapPadding: 0.2,
                       )),
                   style: new TextStyle(
-                      fontSize: 16.0, height: 1.0, color: Color(0xff666666)))),
+                      fontSize: 16.0, height: 1.0, color: Color(UIConstants.PRIMARY_TEXT_COLOR)))),
           SizedBox(height: 216.0, child: _BussinessGridView())
         ],
       ),
@@ -54,6 +55,14 @@ class _BussinessGridViewState extends State<_BussinessGridView> {
     _ReceiveData();
   }
 
+  void _ReceiveData() {
+    Future.delayed(Duration(milliseconds: 200)).then((e) {
+      setState(() {
+        _data = HomeMock.loadHomeBussiness();
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
@@ -65,14 +74,6 @@ class _BussinessGridViewState extends State<_BussinessGridView> {
         itemBuilder: (context, index) {
           return _BussinessItemView(bussiness: _data[index]);
         });
-  }
-
-  void _ReceiveData() {
-    Future.delayed(Duration(milliseconds: 200)).then((e) {
-      setState(() {
-        _data = HomeMock.loadHomeBussiness();
-      });
-    });
   }
 }
 
