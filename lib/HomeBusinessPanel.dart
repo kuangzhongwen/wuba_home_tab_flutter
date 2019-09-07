@@ -59,6 +59,7 @@ class _BussinessGridViewState extends State<_BussinessGridView> {
             crossAxisCount: 5, // 每行 5 列
             crossAxisSpacing: 10.0
             ),
+        physics: NeverScrollableScrollPhysics(), // 禁用滚动事件
         itemCount: _data.length,
         itemBuilder: (context, index) {
           return _BussinessItemView(bussiness: _data[index]);
