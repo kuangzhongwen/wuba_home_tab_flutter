@@ -26,6 +26,7 @@ class _HomeBussinessState extends State<HomeBussinessPanel> {
                   decoration: new InputDecoration(
                       hintText: '房产',
                       prefixIcon: Icon(Icons.search, color: Colors.deepOrange),
+                      suffixIcon: Icon(Icons.archive, color: Colors.black38),
                       contentPadding: const EdgeInsets.symmetric(vertical: 1.0),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(6),
