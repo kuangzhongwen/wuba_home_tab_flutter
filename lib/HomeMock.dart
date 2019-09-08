@@ -48,7 +48,7 @@ class HomeMock {
     List<TribeBean> data = [];
     data.addAll([
       TribeBean(
-          '朋友不拿自己当外人，该怎么办',
+          '这些企业的业务基本都在内地。基本不受香港的影响。下跌无非是市场和市场风格的因素叠加。如果能排除价值陷阱与出千、造假等，不少业绩不错的股票未来可能能提供超额的收益。特别是AH同股同权的标的，AH的溢价指数在这几个月都在扩大，有些已经是历史最高。如果能确定这个企业业绩成长持续性很好，企业经营良好，显然在H股只有A股一半价格的时候更具吸引力',
           'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1567956157366&di=7efb4dcf0d595b8d505c1abc46b1fab0&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201809%2F26%2F20180926162125_vjbwi.jpg',
           'https://58.com'),
       TribeBean(
