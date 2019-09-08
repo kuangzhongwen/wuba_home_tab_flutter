@@ -20,8 +20,6 @@ class _HomeTabState extends State<HomeTab> {
 
   bool dismissAppbar = false;
 
-  List<String> data = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
-
   @override
   void initState() {
     _scrollController.addListener(() {
