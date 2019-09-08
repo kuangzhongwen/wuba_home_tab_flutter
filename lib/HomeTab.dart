@@ -103,7 +103,8 @@ class _HomeTabState extends State<HomeTab> {
                                           width:
                                           MediaQuery.of(context).size.width,
                                           color: Colors.white,
-                                          child: HomeBussinessPanel()))
+                                          child: HomeBussinessPanel())
+                                  )
                                 ),
                                 Padding(
                                     padding: const EdgeInsets.fromLTRB(
