@@ -14,17 +14,15 @@ class _SelectCityState extends State<SelectCityText> {
   @override
   Widget build(BuildContext context) {
     return Row(children: <Widget>[
-      Padding(
-          padding: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
-          child: GestureDetector(
-              onTap: () {
-                print("onTap city text.");
-              },
-              child: Text(
-                selectCity,
-                textAlign: TextAlign.left,
-                style: TextStyle(fontSize: 18.0, color: Colors.white),
-              ))),
+      GestureDetector(
+          onTap: () {
+            print("onTap city text.");
+          },
+          child: Text(
+            selectCity,
+            textAlign: TextAlign.left,
+            style: TextStyle(fontSize: 18.0, color: Colors.white),
+          )),
       Padding(
           padding: const EdgeInsets.fromLTRB(5, 0.0, 0.0, 0.0),
           child: Image.asset("images/ic_location_down_white.png",

@@ -1,9 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
+import 'package:wuba_home_tab_flutter/HomeMock.dart';
 import 'package:wuba_home_tab_flutter/HotDiscussPanel.dart';
 import 'package:wuba_home_tab_flutter/SelectCityText.dart';
 import 'package:wuba_home_tab_flutter/HomeBusinessPanel.dart';
+import 'package:wuba_home_tab_flutter/TribeEnterBean.dart';
+import 'package:wuba_home_tab_flutter/TribeEnterView.dart';
 
 class HomeTab extends StatefulWidget {
   @override
@@ -18,6 +21,8 @@ class _HomeTabState extends State<HomeTab> {
 
   final Key linkKey = GlobalKey();
 
+  TribeEnterBean _tribeEnterData;
+
   bool dismissAppbar = false;
 
   @override
@@ -28,6 +33,9 @@ class _HomeTabState extends State<HomeTab> {
         if (mounted) setState(() {});
       }
       dismissAppbar = ifdismissAppbar;
+    });
+    setState(() {
+      _tribeEnterData = HomeMock.loadTribeEnter();
     });
     super.initState();
   }
@@ -70,14 +78,33 @@ class _HomeTabState extends State<HomeTab> {
                               margin: EdgeInsets.fromLTRB(10, 180, 10, 0),
                               width: MediaQuery.of(context).size.width,
                               child: Column(children: <Widget>[
-                                SelectCityText(),
-                                ClipRRect(
-                                    borderRadius: BorderRadius.circular(6),
-                                    child: Container(
-                                        width:
-                                            MediaQuery.of(context).size.width,
-                                        color: Colors.white,
-                                        child: HomeBussinessPanel())),
+                                SizedBox(
+                                  height: 35,
+                                  child: Flex(
+                                      direction: Axis.horizontal,
+                                      children: <Widget>[
+                                        Expanded(
+                                          flex: 1,
+                                          child: SelectCityText(),
+                                        ),
+                                        Expanded(
+                                          flex: 2,
+                                          child:
+                                              TribeEnterView(_tribeEnterData),
+                                        )
+                                      ]),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.fromLTRB(
+                                      0, 10.0, 0.0, 0.0),
+                                  child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(6),
+                                      child: Container(
+                                          width:
+                                          MediaQuery.of(context).size.width,
+                                          color: Colors.white,
+                                          child: HomeBussinessPanel()))
+                                ),
                                 Padding(
                                     padding: const EdgeInsets.fromLTRB(
                                         0, 10.0, 0.0, 0.0),
