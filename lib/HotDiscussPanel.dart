@@ -64,7 +64,7 @@ class _HotDiscussPanelState extends State<HotDiscussPanel> {
             Padding(
                 padding: UIConstants.HOT_DISCUSS_EI,
                 child: SizedBox(
-                    height: 150.0, child: _HotDiscussGridView(_hotDiscuss)))
+                    height: 140.0, child: _HotDiscussGridView(_hotDiscuss)))
           ],
         ));
   }
@@ -88,6 +88,7 @@ class _HotDiscussGridViewState extends State<_HotDiscussGridView> {
             crossAxisSpacing: 1,
             childAspectRatio: 1.6), // childAspectRatio 为宽高比，默认是 1，一定要设置
         physics: NeverScrollableScrollPhysics(),
+        padding: EdgeInsets.fromLTRB(1.0, 10.0, 1.0, 1.0),
         itemCount: widget._data != null && widget._data.hots != null
             ? widget._data.hots.length
             : 0,
