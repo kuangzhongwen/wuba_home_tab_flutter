@@ -68,7 +68,9 @@ class _BussinessGridViewState extends State<_BussinessGridView> {
     return GridView.builder(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 5, // 每行 5 列
-            crossAxisSpacing: 10.0),
+            crossAxisSpacing: 10.0,
+            mainAxisSpacing: 5,
+            childAspectRatio: 1.1),
         physics: NeverScrollableScrollPhysics(), // 禁用滚动事件
         itemCount: _data.length,
         itemBuilder: (context, index) {
